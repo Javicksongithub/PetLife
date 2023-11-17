@@ -1,0 +1,214 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat',sans-serif;/*defini estilo de familia de fonte */
+    margin:0;/*fazer reset na pagina inteira com a margin e padding*/
+    padding:0;
+}
+body{
+    color: #263138;
+}
+/*regular meu cabeçalho do meu site*/
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ff9a6c;
+    padding-left: 80px ;
+    padding-right: 80px;
+    padding-top:24px ;
+    padding-bottom:24px ;
+}
+/*fazendo estilos nos links dentro do meu navegador deixando elas separada do logo*/
+header nav a {
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 32px;
+    text-decoration: none;
+}
+
+/*aqui vou estilizar a minha tela inicial ou seção do inicio*/
+#inicio{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    /*sempre a mesma ordem , topo , direita,baixo 
+     esquerda*/
+    padding: 24px 80px 128px 80px;
+    position: relative;
+}
+
+h1,
+h2 {
+    /*tamanho da letra e da fonte do texto h1, h2 , e a distacia entre h1 ,h2e o texto*/
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.paragrafo{
+    line-height: 150%;/*difinir distancia entre os elementos do texto*/
+    margin-bottom: 32px;
+
+}
+
+/*estilizar botao marcar consulta e conheça-nos*/
+.botao {
+    background-color: #FF725E;
+    border-radius: 8px;
+    color: #FFFFFF;
+    /*vertical e horizontal*/
+    padding: 16px 32px; 
+    text-decoration: none;
+}
+
+/*botao transparente */
+.botao-transparente{
+    background-color: transparent;
+    color: #FF725E;
+    padding: 16px 32px;
+    text-underline-offset: 4px;/*aqui em vez de tirar o enderline eu modifiquei para sublinhado com o 
+      espaço*/
+}
+
+/*pedindo aqui para que o elemento toma posição absoluto e nos difine manualmente como vai ficar no caso imagem que colocamos ultimo shop-img*/
+.absolute{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+/* estilizar a seção da clinica */
+#clinica{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 64px 80px;
+
+}
+/*estilizar os itens da lista dos cuidados da clinica*/
+#clinica li {
+    margin-bottom: 16px;
+    margin-left: 32px;
+
+}
+
+
+/*estilizar seção da farmacia centralizar a imagem e difinir tamanho e as posições do texto */
+#farmacia{
+    padding: 64px 80px;
+    text-align: center;   
+}
+#farmacia img {
+    margin: 64px auto;
+}
+
+/*pegar paragrafo da farmacia e estilizar dando ela tamanho limitado e responsivo na altura e largura quando deminuir a tela  */
+#farmacia.paragrafo{
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/*estilizar seção de duvidas */
+
+/*aqui ela tem a mesma definição com a seção da clinica podia ser juntados */
+#duvidas{
+    display: flex;
+    align-items: center; 
+    gap: 64px;
+    padding: 64px 80px;
+}
+
+.duvida{
+    position: relative;
+}
+
+/*vamos agora estilizar os elementos da seção clinica: perguntas e respostas , titulos h3 */
+.duvida h3{
+    border: 2px solid #FF725E;
+    border-radius: 8px;
+    cursor: pointer;/*passar mouse em cima cursor vira uma mãozinha*/
+    padding: 24px;/* se não definimos esse valor para o padding imagem ficaria fora do padrao  */
+}
+
+/*estilizar a imagem da classe duvida*/
+.duvida img {
+    position: absolute;/*se ficar assim dava uma resposta que nao queremos por isso dissemos la em cima que posição delas vai ser relativas assim assumira o espaço que lhe compete*/
+    top: 32px;
+    right: 24px;
+}
+ /*difini tamanho da borda a volta dos textos ou paragrafos*/
+.duvida .paragrafo {
+    border-right:1px solid #FF725E;
+    border-bottom:1px solid #FF725E;
+    border-left: 1px solid   #FF725E;
+    border-radius: 0 0 8px 8px;/*arredondado mas n em cima */
+    margin-top: -8px;/*cmpletando bordas ate em cima*/
+    padding: 0 24px;/* dando espaçamento entre elementos e o texto*/
+    /*eu fiz zerar o padding e deixar 24 no horizontal para ajudar no meu js */
+    opacity: 0;/*zerei a transparencia ou opacidade */
+    height: 0;/*xzerei a altura do texto*/
+    overflow: hidden;/* esconder o texto */
+    transition: .2s;
+}
+
+.duvida.ativa .paragrafo{
+    height: fit-content;
+    opacity: 1;
+    padding: 24px;
+
+}
+
+
+/*estilizando o nosso rodape*/
+
+footer {background-color: rgba(255, 152, 108, 0.25);
+    display: flex;
+    justify-content: space-between;/*espaçar entre os elementos */
+    gap: 80px;
+    padding: 64px 80px;
+}
+
+footer  img,
+footer .titulo {
+
+    display: block;/*link por padrao ela vem com display definido , por isso eu tive de fazer essa aqui pra block pq senao da dava o espaçamento entre o titulo link e os seus nav links*/
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+footer nav  a{
+    color: #263138;
+    display: block;/*depois ter feito isso os meus links vai ficar tipo blocos uma em cima da outra */
+    margin-bottom: 16px; /*margem de baixo dando espaço*/
+    text-decoration: none;/*eliminar a linha debaixo dos textos do link*/
+    
+}
+
+footer p {
+    margin-bottom: 16px;
+    max-width: 350px;
+
+}
+
+/*estlizar link do rodape whatsup e o email e o endreço*/
+
+footer p a {
+    color:#263138; ;
+    text-decoration: none;
+    
+}
+
+/* */
+
+#copyright{
+    background-color: #263138;/*definir a cor do fundo*/
+    color: #FFFFFF;/*aqui de finir a cor do texto */
+    padding: 24px;
+    text-align: center; 
+}
+
+#copyright a{
+    color: #FF9A6C;
+}
